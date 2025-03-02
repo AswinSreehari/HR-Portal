@@ -1,0 +1,29 @@
+[
+  {
+    "id": "9af923aa-5ec4-478d-966c-1fc5dea1cc69",
+    "jobId":"65ad9c8bfc13ae1d74000001",
+    "name": "John Doe",
+     "email": "aswinchittethu@gmail.com",
+    "experience": 3,
+    "skills": ["React", "JavaScript", "Node.js"],
+    "resumePath": "https://example.com/resumes/john-doe.pdf"
+  },
+  {
+    "id": "f065470b-fa9b-4eec-9a35-00548a1e13fd",
+    "jobId": "65ad9c8bfc13ae1d74000002",
+    "name": "Jane Smith",
+    "email": "janesmith@example.com",
+    "experience": 5,
+    "skills": ["UI/UX Design", "Figma", "Sketch"],
+    "resumePath": "https://example.com/resumes/jane-smith.pdf"
+  },
+  {
+    "id": "73e27729-a4d5-425d-b2b3-da0a6cf398e8",
+    "jobId": "65ad9c8bfc13ae1d74000001",
+    "name": "Alice Johnson",
+    "email": "alicejohnson@example.com",
+    "experience": 2,
+    "skills": ["SQL", "Data Analysis", "Python"],
+    "resumePath": "https://example.com/resumes/alice-johnson.pdf"
+  }
+]

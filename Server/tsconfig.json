@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                 // Use modern JavaScript features
+    "module": "CommonJS",                // Use CommonJS for compatibility with Node.js
+    "moduleResolution": "Node",          // Properly resolve modules
+    "outDir": "./dist",                  // Output folder for compiled JS files
+    "rootDir": "./src",                  // Source folder for TypeScript files
+    "strict": true,                      // Enable strict type checking
+    "esModuleInterop": true,             // Allows default imports from CommonJS modules
+    "resolveJsonModule": true,           // Enable importing JSON files
+    "forceConsistentCasingInFileNames": true,  // Prevent filename case inconsistencies
+    "skipLibCheck": true,                // Skip type checking for external dependencies
+    "noImplicitAny": true,               // Prevent implicit `any` type usage
+    "strictNullChecks": true,            // Enable strict null checks
+    "noUnusedLocals": true,              // Prevent unused local variables
+    "noUnusedParameters": true,          // Prevent unused function parameters
+    "noFallthroughCasesInSwitch": true   // Prevent fallthrough cases in switch statements
+  },
+"include": ["src"],  
+"exclude": ["node_modules", "dist", "../client"]  // Exclude the client folder
+   
+}

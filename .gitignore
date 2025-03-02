@@ -1,0 +1,24 @@
+# Node modules (DO NOT COMMIT)
+node_modules/
+
+# Environment variables (DO NOT COMMIT)
+.env
+
+# Build & log files
+dist/
+build/
+logs/
+*.log
+
+ )
+public/
+!public/index.html  
+
+# Ignore utils only if it contains sensitive files
+utils/*.env  #  
+
+# Ignore OS & Editor-specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
