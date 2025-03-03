@@ -12,7 +12,7 @@ dotenv.config();
 connectDB();
 
 const app: Express = express();
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
@@ -25,13 +25,14 @@ app.use("/uploads/resumes", express.static(path.join(__dirname, "./uploads/resum
 app.use('/api/candidates', candidateRoute);
 
 // Basic route for testing
-app.get('/', (req: Request, res: Response) => {
-  console.log(req)
-  res.send('HR Careers Portal API is running');
+app.get('/', (_req: Request, res: Response) => {
+   
+  res.send('HR Careers Portal API is running on Vercel 🚀');
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
 
+export default app;
