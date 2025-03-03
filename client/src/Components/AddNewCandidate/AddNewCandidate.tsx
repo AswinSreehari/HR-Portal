@@ -117,6 +117,7 @@ const AddCandidateModal: React.FC<AddCandidateModalProps> = ({ show, jobId, onCl
               value={newCandidate.experience}
               onChange={handleInputChange}
               isInvalid={!!errors.experience}
+              min="0"
             />
             <Form.Control.Feedback type="invalid">{errors.experience}</Form.Control.Feedback>
           </Form.Group>

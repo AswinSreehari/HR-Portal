@@ -18,7 +18,12 @@ function BasicExample() {
     <div className="row">
       {jobs.map((job) => (
         <div key={job.id} className="col-md-4 mb-4">
-          <Card className="shadow p-3 bg-white rounded h-100">
+<Card
+  className="p-3 bg-white rounded h-100"
+  style={{
+    boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
+  }}
+>
             <Card.Body>
               <Card.Title>{job.title}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">

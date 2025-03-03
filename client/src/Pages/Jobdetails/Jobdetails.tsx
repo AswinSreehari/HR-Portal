@@ -122,7 +122,11 @@ const JobDetails: React.FC = () => {
       <div className="row">
         {/* Left Side - Job Details */}
         <div className="col-md-7">
-          <Card className="shadow p-4 bg-white rounded">
+          <Card className="  p-4 bg-white rounded"
+          style={{
+            boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
+          }}
+          >
             <Card.Body>
               <div className="d-flex justify-content-end">
                 <Button variant="success" onClick={handleShowAddModal}>
@@ -173,7 +177,11 @@ const JobDetails: React.FC = () => {
           <h4 className="mb-3">Candidates Applied</h4>
           {appliedCandidates.length > 0 ? (
             appliedCandidates.map((candidate) => (
-              <Card key={candidate.id} className="mb-3 shadow p-2">
+              <Card key={candidate.id} className="mb-3 p-2"
+              style={{
+                boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
+              }}
+              >
                 <Card.Body className="d-flex justify-content-between align-items-center">
                   <div>
                     <Card.Title>{candidate.name}</Card.Title>
