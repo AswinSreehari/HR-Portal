@@ -15,7 +15,11 @@ const app: Express = express();
 // const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({origin: "https://hr-portal-client-phi.vercel.app"}));
+app.use(cors({
+  origin: "https://hr-portal-client-phi.vercel.app",  
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
