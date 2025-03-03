@@ -24,8 +24,7 @@ export default function ButtonAppBar() {
     const email = localStorage.getItem('email');
      
     if (email) {
-      const name = email.substring(0, email.indexOf('@'));
-      setUserName(name.charAt(0).toUpperCase() + name.slice(1)); 
+       setUserName(localStorage.getItem('name') || 'HR-Portal'); 
     } else {
       setUserName('HR-Portal');
     }

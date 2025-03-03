@@ -35,7 +35,8 @@ const GoogleSignIn: React.FC = () => {
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, provider).then((data) => {
       setValue(data.user.email || '');  
-      localStorage.setItem("email", data.user.email || '');  
+       localStorage.setItem("email", data.user.email || '');  
+       localStorage.setItem("name", data.user.displayName || '');
     });
   };
 

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import { Candidate } from "../../types";
 import axios from "axios";
-import { BASEURL } from "../../utils/utils";
-
+ 
 interface EmailModalProps {
   show: boolean;
   candidate: Candidate | null;
@@ -56,7 +55,7 @@ const EmailModal: React.FC<EmailModalProps> = ({
 
     try {
       const response = await axios.post(
-        `${BASEURL}/api/candidates/schedule-interview`,
+        `${import.meta.env.VITE_BASEURL}/api/candidates/schedule-interview`,
         formData
       );
       if (response.status === 201) {

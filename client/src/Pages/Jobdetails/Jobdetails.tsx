@@ -7,15 +7,14 @@ import { Job, Candidate } from "../../types";
 import { FaEnvelope, FaFilePdf, FaUserPlus } from "react-icons/fa";
 import EmailModal from "../../Components/Email/EmailModal";
 import AddCandidateModal from "../../Components/AddNewCandidate/AddNewCandidate";
-import { BASEURL } from "../../utils/utils"; // API base URL
-import axios from "axios";
+ import axios from "axios";
 
 const JobDetails: React.FC = () => {
   const { jobId } = useParams<{ jobId: string }>();
   const job: Job | undefined = jobs.find((j) => j.id === jobId);
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [appliedCandidates, setAppliedCandidates] = useState<Candidate[]>(
-    candidates.filter((c) => c.jobId === jobId)
+    candidates?.filter((c) => c.jobId === jobId)
   );
 
   // Email Modal State
@@ -72,7 +71,7 @@ const JobDetails: React.FC = () => {
 
     try {
       const response = await axios.post(
-        `${BASEURL}/api/candidates/add`,
+        `${import.meta.env.VITE_BASEURL}/api/candidates/add`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -97,12 +96,12 @@ const JobDetails: React.FC = () => {
     const getCandidatesData = async () => {
       try {
         const response = await axios.get(
-          `${BASEURL}/api/candidates/getCandidates`
+          `${import.meta.env.VITE_BASEURL}/api/candidates/getCandidates`
         );
         setCandidates(response.data.candidates);
 
         setAppliedCandidates(
-          response.data.candidates.filter((c: Candidate) => c.jobId === jobId)
+          response?.data?.candidates?.filter((c: Candidate) => c.jobId === jobId)
         );
       } catch (error) {
         console.error("Error fetching candidates:", error);
