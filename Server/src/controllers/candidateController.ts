@@ -7,9 +7,10 @@ const BASEURL = `http://localhost:${process.env.PORT || 5000}`;
  
 export const scheduleInterview = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { candidateEmail, candidateName, date, time, location, interviewer, meetingLink } = req.body;
+    const { candidateEmail, candidateName, date, time, location, interviewer, meetingLink, interviewType } = req.body;
+    console.log(req.body)
 
-    if (!candidateEmail || !candidateName || !date || !time || !location || !interviewer || !meetingLink) {
+    if (!candidateEmail || !candidateName || !date || !time || !location || !interviewer || !meetingLink || !interviewType) {
       res.status(400).json({ message: "All fields are required" });
       return;
     }
@@ -23,6 +24,7 @@ export const scheduleInterview = async (req: Request, res: Response): Promise<vo
       location,
       interviewer,
       meetingLink,
+      interviewType,
     });
 
     await interview.save();
