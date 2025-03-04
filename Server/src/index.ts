@@ -18,7 +18,8 @@ const app: Express = express();
 app.use(cors({
   origin: "https://hr-portal-client-phi.vercel.app",  
   methods: "GET,POST,PUT,DELETE",
-  credentials: true
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
