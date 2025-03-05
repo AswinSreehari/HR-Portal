@@ -10,7 +10,6 @@ HR Careers Portal is a web application designed to help HR professionals manage 
 ---
 
 ## 📸 Screenshots
-> Add your site screenshots here by uploading images to the repository and linking them.
 
 - **Google SignIn**
   ![SignIn](./screenshots/GoogleSignIn.jpg)
