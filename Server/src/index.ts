@@ -12,11 +12,22 @@ dotenv.config();
 connectDB();
 
 const app: Express = express();
-// const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
+const allowedOrigins = [
+  "http://localhost:5173",   
+  "https://hr-portal-client-phi.vercel.app"  
+];
+
 app.use(cors({
-  origin: "https://hr-portal-client-phi.vercel.app",  
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: "GET,POST,PUT,DELETE",
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"]
@@ -36,8 +47,8 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 // Start server
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 export default app;
